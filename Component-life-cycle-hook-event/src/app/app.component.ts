@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `
+  <app-example data="merhaba">asdsadasdas</app-example>
+  `
 })
 export class AppComponent {
   title = 'Component-life-cycle-hook-event';
