@@ -1,0 +1,38 @@
+<form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
+<input type="text" placeholder="Name" formControlName="name"> <br>
+<input type="text" placeholder="Surname" formControlName="surname"> <br>
+<input type="email" placeholder="Email" formControlName="email"> <br>
+<input type="tel" placeholder="Tel" formControlName="tel"> <br>
+
+<div formGroupName="address">
+    <input type="text" placeholder="Country" formControlName="country"> <br>
+    <input type="text" placeholder="City" formControlName="city"> <br>
+    <input type="text" placeholder="Adress" formControlName="adress"> <br>
+</div>
+<button>Send</button>
+</form>
+<br>
+<button (click)="markAsTouched()">markAsTouched</button>
+<br>
+<button (click)="markAllAsTouched()">markAllAsTouched</button>
+<br>
+<button (click)="markAsUntouched()">markAsUntouched</button>
+<br>
+<button (click)="markAsDirty()">markAsDirty</button>
+<br>
+<button (click)="markAsPristine()">markAsPristine</button>
+<br>
+<button (click)="disable()">disable</button>
+<br>
+<button (click)="enable()">enable</button>
+<br>
+form touched : {{frm.touched}} <br>
+'name' form control touched : {{frm.get("name").touched}} <br>
+'address' form control touched : {{frm.get("address").touched}} <br>
+'country' form control touched : {{frm.get("address").get("country").touched}}
+<hr>
+form dirty : {{frm.dirty}} <br>
+'name' form control dirty : {{frm.get("name").dirty}}
+<hr>
+form pristine : {{frm.pristine}} <br>
+'name' form control pristine : {{frm.get("name").pristine}}
